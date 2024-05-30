@@ -1,0 +1,42 @@
+<div class="label-pane">
+  <ng-container *ngIf="isTablePaneOpen">
+    <div class="table-pane">table pane</div>
+  </ng-container>
+  <ng-container *ngIf="!isTablePaneOpen">
+    <div class="label-pane-command-bar">
+      <div><!-- TODO: put item count UI here --></div>
+      <div class="icon-buttons">
+        <button type="button" id="add-button" title="Add field" class="buttons" data-is-focusable="true" aria-expanded="false" aria-haspopup="true"
+          (click)="noop()"
+        >
+          <span class="ms-Button-flexContainer flexContainer-106" data-automationid="splitbuttonprimary"> + </span>
+        </button>
+        <button type="button" id="filter-button" title="Add field" class="buttons" data-is-focusable="true" aria-expanded="false" aria-haspopup="true" style="display: none;"
+          (click)="onFieldFilterClick()"
+        >
+          <span class="ms-Button-flexContainer flexContainer-106" data-automationid="splitbuttonprimary"> Filter </span>
+        </button>
+      </div>
+    </div>
+    <div class="label-list-bar">
+      <div class="label-list">
+        <!-- TODO: Update Label item with label item component -->
+        <div *ngFor="let field of fields;">
+          <div class="label-item">
+            <div>=</div>
+            <i></i>
+            <span>{{ field.fieldKey }}</span>
+            <div (click)="handleTablePaneOpen(field)">:</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="isFieldCalloutOpen">
+      <!-- TODO: FieldCallout -->
+    </ng-container>
+  </ng-container>
+
+  <ng-container>
+    <!-- TODO: Create Table Modal -->
+  </ng-container>
+</div>

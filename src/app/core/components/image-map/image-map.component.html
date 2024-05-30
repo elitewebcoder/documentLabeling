@@ -1,0 +1,30 @@
+<div
+  class="map-container"
+  (mouseenter)="handlePointerEnterImageMap()"
+  (mouseleave)="handlePointerLeaveImageMap()"
+>
+  <div
+    #mapElement
+    class="map-content"
+    id="map"
+    [style.cursor]="mapCursor"
+    (mousemove)="handleMouseMove($event)"
+    (click)="handleClick()"
+  ></div>
+</div>
+<app-inline-label-menu
+  [enabledTypes]="enabledTypesForInlineMenu"
+  [showPopup]="showInlineLabelMenu"
+  [positionTop]="menuPositionTop"
+  [positionLeft]="menuPositionLeft"
+></app-inline-label-menu>
+<ng-container *ngIf="showDeleteRegionIcon">
+  <span
+    class="icon-region-delete"
+    [style.top]="currentRegionPositionTop"
+    [style.left]="currentRegionPositionLeft"
+    (click)="clearDrawnRegion()"
+    (mouseenter)="handleMouseEnterIntoDeleteRegion()"
+    (mouseleave)="isHoveringOnDeleteRegionIcon = false;handleDeleteDrawnRegionDebouncer();"
+  >x</span>
+</ng-container>

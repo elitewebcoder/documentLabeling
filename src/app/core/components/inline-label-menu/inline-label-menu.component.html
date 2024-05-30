@@ -1,0 +1,41 @@
+<div
+  class="inline-label-menu"
+  *ngIf="showPopup && !hideInlineLabelMenu"
+  [style.top]="top"
+  [style.left]="left"
+>
+  <div class="inline-label-menu-input">
+    <div class="input-wrapper">
+      <input
+        type="text"
+        id="TextField105"
+        placeholder="Search existing or create new"
+        autocomplete="off"
+        aria-invalid="false"
+        [value]="searchText"
+        (input)="handleSearchTextChange($event)"
+      >
+    </div>
+  </div>
+  <div class="inline-label-menu-list">
+    <div>
+      <div *ngFor="let item of items;">
+        <button
+          type="button"
+          class="inline-label-menu-item"
+          [attr.aria-label]="item.text"
+          data-is-focusable="true"
+          tabindex="0"
+          (click)="item.isCreate? handleCreateFieldClick(item.fieldType) : handleFieldClick(item.text)"
+        >
+          <span class="label-menu-item-text" data-automationid="splitbuttonprimary">
+            <i data-icon-name="CircleFill" aria-hidden="true" [style.background-color]="item.iconColor"></i>
+            <span>
+              <span class="label-text">{{ item.text }}</span>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

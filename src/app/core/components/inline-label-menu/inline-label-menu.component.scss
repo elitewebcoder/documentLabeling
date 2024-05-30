@@ -1,0 +1,119 @@
+.inline-label-menu {
+  outline: none;
+  max-height: 180px;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden auto;
+  position: absolute;
+  width: 250px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100000;
+  box-shadow: rgba(0, 0, 0, 0.133) 0px 6.4px 14.4px 0px, rgba(0, 0, 0, 0.11) 0px 1.2px 3.6px 0px;
+}
+
+.inline-label-menu-item {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  outline: transparent;
+  position: relative;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 4px;
+  text-decoration: none;
+  text-align: center;
+  height: 40px;
+  color: rgb(50, 49, 48);
+  background-color: transparent;
+  user-select: none;
+
+  .label-menu-item-text {
+    display: flex;
+    height: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    i {
+      font-size: 16px;
+      margin: 0px 4px;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      border-radius: 100%;
+      line-height: 16px;
+      text-align: center;
+      flex-shrink: 0;
+      background-color: rgb(16, 110, 190);
+    }
+    .label-text {
+      margin: 0px 4px;
+      line-height: 100%;
+      display: block;
+    }
+  }
+}
+
+.inline-label-menu-input {
+  padding: 6px;
+  display: flex;
+  flex-flow: column;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+
+  .input-wrapper {
+    box-shadow: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 1px solid rgb(96, 94, 92);
+    border-radius: 2px;
+    background: rgb(255, 255, 255);
+    cursor: text;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+
+    input {
+      font-family: inherit;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      font-weight: 400;
+      box-shadow: none;
+      margin: 0px;
+      padding: 0px 8px;
+      box-sizing: border-box;
+      border-radius: 0px;
+      border: none;
+      background: none transparent;
+      color: rgb(50, 49, 48);
+      width: 100%;
+      min-width: 0px;
+      text-overflow: ellipsis;
+      outline: 0px;
+    }
+  }
+}
+
+.inline-label-menu-list {
+  overflow: auto;
+  display: flex;
+  flex-flow: column;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  flex-grow: 1;
+}

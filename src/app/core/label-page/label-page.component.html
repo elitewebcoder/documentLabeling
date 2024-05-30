@@ -1,0 +1,38 @@
+<div class="custom-doc-label-page">
+  <div class="label-page-header">
+    <h2 tabindex="0" aria-label="Label Page" class="page-title">Label Page</h2>
+  </div>
+
+  <div class="label-page-main">
+    <div class="label-page-gallery">
+      <app-document-gallery
+        [hideAddButton]="false"
+        [shouldConfirmDeleteDocument]="true"
+        (onDocumentDeleted)="deleteDocumentInStorage($event)"
+      ></app-document-gallery>
+    </div>
+    <div class="split-container">
+      <div class="label-page-canvas">
+        <div class="label-canvas">
+          <div class="label-canvas-command-bar"></div>
+          <div class="label-canvas-image-map">
+            <app-image-map
+              *ngIf="canvas"
+              [imageUri]="canvas.imageUrl"
+              [imageWidth]="canvas.width"
+              [imageHeight]="canvas.height"
+              [imageAngle]="canvas.angle"
+            ></app-image-map>
+          </div>
+          <div class="label-canvas-control-bar"></div>
+        </div>
+      </div>
+      <div class="label-page-pane">
+        <app-label-pane
+          [isTablePaneOpen]="isTablePaneOpen"
+          (setIsTablePaneOpen)="handelSetIsTablePanelOpen($event)"
+        ></app-label-pane>
+      </div>
+    </div>
+  </div>
+</div>

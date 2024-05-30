@@ -1,0 +1,11 @@
+<div class="document-gallery-container">
+  <div class="document-gallery-list">
+    <div
+      *ngFor="let doc of displayedDocuments; let i = index;"
+      class="document-card"
+      (click)="handleDocumentClick(doc.name)"
+    >
+      <img [src]="doc.thumbnail" [alt]="doc.name">
+    </div>
+  </div>
+</div>
